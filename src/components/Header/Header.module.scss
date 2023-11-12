@@ -10,12 +10,16 @@
   height: 75px;
   padding: 25px 45px;
   background: var(--black-100);
-  box-shadow: 0 15px 15px var(--box-shadow);
   z-index: 1;
+  box-shadow: 0 0.3px 0.3px var(--box-shadow);
 
   .logoMain {
     @include a-items;
     gap: 5px;
+  }
+
+  .mobileMenu {
+    display: none;
   }
 
   .closeToggle {
@@ -43,7 +47,6 @@
     gap: 0.5rem;
   }
 
-  .logo img:hover,
   .github:hover {
     @include filter;
   }
@@ -61,7 +64,28 @@
 }
 
 @media screen and (max-width: 768px) {
-  .settings {
-    display: none !important;
+  .header {
+    @include f-rules(space-between);
+    height: 50px;
+
+    .logo {
+      margin-left: -30px;
+      .logoIcon {
+        width: 20px;
+        height: 23px;
+      }
+    }
+
+    .mobileMenu {
+      display: block !important;
+      margin: {
+        right: -105px;
+        top: 10px;
+      }
+    }
+
+    .settings {
+      display: none !important;
+    }
   }
 }

@@ -40,6 +40,10 @@
       line-height: 0.8;
     }
 
+    .small {
+      display: none;
+    }
+
     .description {
       max-width: 90vw;
       font-size: var(--fz-normal);

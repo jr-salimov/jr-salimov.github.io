@@ -1,9 +1,3 @@
-import github from "../../assets/images/Contacts/github.svg";
-import instagram from "../../assets/images/Contacts/instagram.svg";
-import linkedin from "../../assets/images/Contacts/linkedin.svg";
-import dribble from "../../assets/images/Contacts/dribble.svg";
-import discord from "../../assets/images/Contacts/discord.svg";
-import styles from "./Footer.module.scss";
 import {
   GITHUB_LINK,
   INSTAGRAM_LINK,
@@ -11,6 +5,12 @@ import {
   DRIBBLE_LINK,
   DISCORD_LINK,
 } from "../../links.js";
+import styles from "./Footer.module.scss";
+import github from "../../assets/images/Contacts/github.svg";
+import instagram from "../../assets/images/Contacts/instagram.svg";
+import linkedin from "../../assets/images/Contacts/linkedin.svg";
+import dribble from "../../assets/images/Contacts/dribble.svg";
+import discord from "../../assets/images/Contacts/discord.svg";
 
 const iconsArr = [
   { href: GITHUB_LINK, src: github, alt: "github" },

@@ -1,4 +1,3 @@
-@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap";
 @import "./mixins.scss";
 @import "./sass-variables.scss";
 
@@ -12,7 +11,7 @@ body {
   height: 100vh;
 
   &:has(.switchInput:checked) {
-    --primary-bg: invert(var(--primary-bg));
+    --primary-bg: #ffe;
     --secondary: invert(var(--secondary));
     --color-h1: var(--tertiary);
     --black-100: #fff;
@@ -21,19 +20,45 @@ body {
     --menu-toggle: #ff9100;
     --menu-toggle-secondary: #fff;
 
-    .header {
-      background-color: #fff;
+    header {
+      box-shadow: 0 1px 1px var(--box-shadow);
     }
 
-    a > img {
+    header > div > a > img,
+    footer > div > a > img,
+    div > div > a > img {
       @include filter;
     }
 
     label > img {
-      @include filter;
+      @include filter(0, 0, 0, 0deg, 0%);
+    }
 
-      &:hover {
-        @include filter(100, 100, 100, 100deg);
+    section > div > a > img {
+      @include filter(-1);
+    }
+
+    section > div > div > a > img:hover {
+      @include filter(1);
+    }
+
+    nav > a {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        width: var(--size);
+        height: 2px;
+        background-color: #000;
+        transition: transform 0.5s ease-in-out;
+        transform: scaleX(0) {
+          origin: right;
+        }
+      }
+      &:hover::before {
+        transform: scaleX(1) {
+          origin: left;
+        }
       }
     }
   }
@@ -41,14 +66,14 @@ body {
 
 input {
   color: var(--fg);
-  font: 1rem/1.5 sans-serif;
+  font: 1rem/1.5 var(--main-font);
 }
 
 * {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--main-font);
   box-sizing: border-box;
 }
 

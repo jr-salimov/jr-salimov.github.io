@@ -1,30 +1,29 @@
-import styles from "./About.module.scss";
+import { FormattedMessage, useIntl } from "react-intl";
 import { WordToLetters } from "../../components/WordToLetters";
+import styles from "./About.module.scss";
 
 export function About() {
+  const intl = useIntl();
+
   return (
     <section className={styles.wrapper} id="about">
       <div className={styles.title}>
         <span className={styles.name}>
-          <WordToLetters words="Hi, I'm Atoullo," />
+          <WordToLetters words={intl.formatMessage({ id: "title2_1" })} />
         </span>
         <br />
 
         <span className={styles.position}>
-          <WordToLetters words="Web Developer" />
+          <WordToLetters words={intl.formatMessage({ id: "title2_2" })} />
         </span>
 
         <br />
         <span className={styles.small}>
-          Front-End Developer / JavaScript & React Fan
+          <FormattedMessage id="smallText1" />
         </span>
       </div>{" "}
       <div className={styles.description}>
-        Professionally connected with the web development industry. Problem
-        solver, well-organised person, loyal freelancer with high attention to
-        detail. Fan of Football, debate games, chess, and coding of course.
-        Interested in the entire frontend spectrum and working on ambitious
-        projects with interesting people.
+        <FormattedMessage id="description2" />
       </div>
     </section>
   );

@@ -55,10 +55,8 @@
 
     .description {
       max-width: 90vw;
-
       .email {
         --fz-h2: 1.5rem;
-
         .mailIcon {
           display: none;
         }
@@ -71,8 +69,10 @@
   .wrapper {
     @include margin;
     max-width: 35%;
-    .title {
-      text-align: center;
+    @include column-aic;
+    text-align: center;
+    .email {
+      margin-left: 75px;
     }
   }
 }
